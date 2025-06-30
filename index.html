@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saurabh Tiwari | Portfolio</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -21,12 +23,23 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      color: white;
     }
 
     @keyframes gradient {
       0% {background-position: 0% 50%;}
       50% {background-position: 100% 50%;}
       100% {background-position: 0% 50%;}
+    }
+
+    @keyframes spin {
+      from {transform: rotate(0deg);}
+      to {transform: rotate(360deg);}
+    }
+
+    @keyframes type {
+      from { width: 0 }
+      to { width: 100% }
     }
 
     .ring {
@@ -39,82 +52,98 @@
       z-index: 0;
     }
 
-    @keyframes spin {
-      from {transform: rotate(0deg);}
-      to {transform: rotate(360deg);}
-    }
-
     .card {
       position: relative;
       z-index: 1;
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(10px);
       border-radius: 16px;
       padding: 40px 30px;
-      text-align: center;
-      color: white;
-      max-width: 600px;
+      text-align: left;
+      max-width: 700px;
       width: 90%;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+      font-family: 'Fira Code', monospace;
+    }
+
+    .console-line {
+      color: #00ff99;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2.2rem;
+      margin-bottom: 5px;
     }
 
     h2 {
       font-weight: normal;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: #ccc;
-      margin-bottom: 25px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #00ff99;
+      width: 0;
+      animation: type 4s steps(30, end) forwards;
     }
 
     p {
       font-size: 1rem;
       line-height: 1.6;
       color: #bbb;
-      margin-bottom: 30px;
+      margin: 20px 0;
+    }
+
+    code {
+      background-color: rgba(255,255,255,0.1);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      color: #00ff99;
     }
 
     .links {
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
-      justify-content: center;
+      margin-top: 25px;
     }
 
     .links a {
       text-decoration: none;
       color: white;
-      background: #333;
+      background: #111;
       padding: 12px 20px;
+      border: 1px solid #00ff99;
       border-radius: 6px;
       transition: 0.2s ease;
     }
 
     .links a:hover {
-      background: #555;
+      background: #00ff99;
+      color: #000;
       transform: scale(1.05);
     }
 
     @media (max-width: 480px) {
       .card { padding: 30px 20px; }
-      h1 { font-size: 2rem; }
-      p { font-size: 0.95rem; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 0.95rem; }
     }
   </style>
 </head>
 <body>
   <div class="ring"></div>
-
   <div class="card">
-    <h1>Saurabh Tiwari</h1>
+    <div class="console-line">> Hello, I’m <strong style="color:#00ff99;">Saurabh Tiwari</strong></div>
     <h2>👨‍💻 IT Undergrad | Web & AI Enthusiast</h2>
     <p>
-      I'm passionate about creating real-world solutions that solve meaningful problems. Whether it's building full-stack web applications, integrating APIs, or experimenting with AI models, I enjoy working on projects that challenge me to learn and grow. I'm always curious, constantly exploring new technologies, and I believe in sharing what I learn to contribute back to the developer community.
+      I'm passionate about building <code>real-world solutions</code> that solve meaningful problems. Whether it's developing <code>full-stack web apps</code>, integrating RESTful <code>APIs</code>, or experimenting with <code>AI/ML models</code>, I love working on projects that challenge me to learn and grow.
     </p>
-
+    <p>
+      I’m also a fan of <code>open source</code> — whether it's contributing to existing repositories or building tools that others can use, I believe in collaboration and community-driven innovation.
+    </p>
     <div class="links">
       <a href="https://github.com/SaurabhCodes-16" target="_blank">🐙 GitHub</a>
       <a href="https://linkedin.com/in/saurabh-tiwari-902ba327b" target="_blank">🔗 LinkedIn</a>
