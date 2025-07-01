@@ -17,7 +17,9 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: #0a0a0a; /* solid black */
+
+
       color: #ffffff;
       padding: 30px 20px;
       line-height: 1.6;
@@ -48,12 +50,40 @@
       margin-bottom: 60px;
     }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      border-left: 5px solid #00d2ff;
-      padding-left: 15px;
-    }
+   h2 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to right, #00d2ff, #3a7bd5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideIn 0.7s ease forwards;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(to right, #00d2ff, #3a7bd5);
+  box-shadow: 0 0 10px #00d2ff, 0 0 20px #3a7bd5;
+  animation: underlineGlow 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes underlineGlow {
+  from {
+    transform: scaleX(0.8);
+    opacity: 0.6;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
 
     .project, .skills-group {
       background: rgba(255, 255, 255, 0.05);
@@ -135,39 +165,108 @@
         font-size: 1.5rem;
       }
     }
+
+    .projects-wrapper {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 15px 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.projects-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.project-card {
+  flex: 0 0 auto;
+  min-width: 300px;
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  scroll-snap-align: start;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.08);
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card h3 {
+  margin-bottom: 10px;
+  color: #00d2ff;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.project-card a {
+  color: #4db8ff;
+  text-decoration: none;
+}
+
   </style>
 </head>
 <body>
 
   <header data-aos="fade-down">
     <h1>Saurabh Tiwari</h1>
-    <p>CS Undergrad | Full Stack & AI Developer | Always Learning</p>
+    <p>IT Undergrad | Backend-Focused Developer | Applied AI Enthusiast</p>
   </header>
 
   <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <div class="project">
       <p>
-        I’m a 3rd year Computer Science student passionate about full-stack development, AI/ML integration, and solving real-world problems through technology. I build intelligent systems and experiment with LLMs, scene graphs, and scalable backend infrastructure.
+        I’m a 3rd year IT student focused on full-stack development and applied AI. I enjoy working with LLMs, scene graph pipelines, and building scalable systems with modern web and backend technologies
       </p>
     </div>
   </section>
 
-  <section id="projects" data-aos="fade-up">
-    <h2>Projects</h2>
+  <section id="current" data-aos="fade-up">
+  <h2>Currently Working On</h2>
+  <div class="project">
+    <ul>
+      <li>📹 Building a Spatial-Temporal Scene Graph pipeline for video QA using YOLOv8 + LLMs (Ollama)</li>
+      <li>🧠 Exploring applied AI use-cases with OpenAI & Ollama APIs</li>
+      <li>⚙️ Improving backend infrastructure and role-based access in my Criminal Management System</li>
+    </ul>
+  </div>
+</section>
 
-    <div class="project" data-aos="zoom-in-up">
+
+<section id="projects" data-aos="fade-up">
+  <h2>Projects</h2>
+
+  <div class="projects-wrapper">
+    <div class="project-card" data-aos="zoom-in-up">
       <h3>STSG Video QA System</h3>
       <p>Built a spatial-temporal scene graph pipeline using YOLOv8 + Ollama (LLM) to answer questions from videos. Includes triplet detection, tracking, and reasoning.</p>
       <a href="https://github.com/SaurabhCodes-16/your-STSG-repo" target="_blank">🔗 View on GitHub</a>
     </div>
 
-    <div class="project" data-aos="zoom-in-up" data-aos-delay="100">
+    <div class="project-card" data-aos="zoom-in-up" data-aos-delay="100">
       <h3>Criminal Management System</h3>
       <p>Full-stack system with React, Node.js, and MySQL to manage criminal records, court cases, and forensic evidence. Role-based dashboards for police and admins.</p>
       <a href="https://github.com/SaurabhCodes-16/Criminal-Managemet-System" target="_blank">🔗 View on GitHub</a>
     </div>
-  </section>
+
+    <div class="project-card" data-aos="zoom-in-up" data-aos-delay="200">
+      <h3>Job Fraud Detector</h3>
+      <p>AI-powered web app that parses job offers and flags fraud using OpenAI + PDF parsing logic.</p>
+      <a href="#" target="_blank">🔗 View on GitHub</a>
+    </div>
+  </div>
+</section>
+
 
   <section id="skills" data-aos="fade-up">
     <h2>Skills</h2>
@@ -238,7 +337,8 @@
   <script>
     AOS.init({
       duration: 1000,
-      once: true
+      once: false,
+      mirror : true
     });
   </script>
 
