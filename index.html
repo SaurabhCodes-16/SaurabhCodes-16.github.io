@@ -1,155 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Saurabh Tiwari | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      height: 100vh;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      background-size: 400% 400%;
-      animation: gradient 15s ease infinite;
       font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      color: white;
-    }
-
-    @keyframes gradient {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    @keyframes spin {
-      from {transform: rotate(0deg);}
-      to {transform: rotate(360deg);}
-    }
-
-    @keyframes type {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    .ring {
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      border: 2px dashed rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      animation: spin 40s linear infinite;
-      z-index: 0;
-    }
-
-    .card {
-      position: relative;
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 40px 30px;
-      text-align: left;
-      max-width: 700px;
-      width: 90%;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
-      font-family: 'Fira Code', monospace;
-    }
-
-    .console-line {
-      color: #00ff99;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 5px;
-    }
-
-    h2 {
-      font-weight: normal;
-      font-size: 1rem;
-      color: #ccc;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 2px solid #00ff99;
-      width: 0;
-      animation: type 4s steps(30, end) forwards;
-    }
-
-    p {
-      font-size: 1rem;
+      background: #0f0f0f;
+      color: #fff;
       line-height: 1.6;
-      color: #bbb;
-      margin: 20px 0;
     }
-
-    code {
-      background-color: rgba(255,255,255,0.1);
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 0.95rem;
-      color: #00ff99;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 25px;
-    }
-
-    .links a {
-      text-decoration: none;
-      color: white;
+    header {
       background: #111;
-      padding: 12px 20px;
-      border: 1px solid #00ff99;
-      border-radius: 6px;
-      transition: 0.2s ease;
+      padding: 20px 40px;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding: 15px;
+      background: #181818;
+    }
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
     }
 
-    .links a:hover {
-      background: #00ff99;
-      color: #000;
-      transform: scale(1.05);
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
-    @media (max-width: 480px) {
-      .card { padding: 30px 20px; }
-      h1 { font-size: 1.8rem; }
-      h2 { font-size: 0.95rem; }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+    .project-card:hover {
+      background: #272727;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      background: #111;
+      color: #888;
     }
   </style>
 </head>
 <body>
-  <div class="ring"></div>
-  <div class="card">
-    <div class="console-line">> Hello, I’m <strong style="color:#00ff99;">Saurabh Tiwari</strong></div>
-    <h2>👨‍💻 IT Undergrad | Web & AI Enthusiast</h2>
-    <p>
-      I'm passionate about building <code>real-world solutions</code> that solve meaningful problems. Whether it's developing <code>full-stack web apps</code>, integrating RESTful <code>APIs</code>, or experimenting with <code>AI/ML models</code>, I love working on projects that challenge me to learn and grow.
-    </p>
-    <p>
-      I’m also a fan of <code>open source</code> — whether it's contributing to existing repositories or building tools that others can use, I believe in collaboration and community-driven innovation.
-    </p>
-    <div class="links">
-      <a href="https://github.com/SaurabhCodes-16" target="_blank">🐙 GitHub</a>
-      <a href="https://linkedin.com/in/saurabh-tiwari-902ba327b" target="_blank">🔗 LinkedIn</a>
-      <a href="mailto:spssgzp4@gmail.com">📧 Email</a>
-      <a href="resume.pdf" target="_blank">📄 Resume</a>
+  <header>
+    <h1>Saurabh Tiwari</h1>
+    <p>CS Undergrad | AI & Web Dev | Problem Solver</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m a 3rd year Computer Science student passionate about building real-world solutions, exploring deep learning, integrating APIs, and sharing knowledge with the tech community. I enjoy working across the full stack and constantly seek opportunities to learn and grow.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>STSG Q&A Model</h3>
+        <p>Spatio-Temporal Scene Graph generator integrated with Mistral/Ollama for video-based question answering.</p>
+        <a href="https://github.com/SaurabhCodes-16/stsg-qa" target="_blank">GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Criminal Management System</h3>
+        <p>Full-stack system using React, Node.js, and MySQL to track criminals, cases, and forensic data.</p>
+        <a href="https://github.com/SaurabhCodes-16/Criminal-Managemet-System" target="_blank">GitHub</a>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p><strong>Languages:</strong> Python, JavaScript, C++</p>
+    <p><strong>Frameworks:</strong> React, Node.js, Express</p>
+    <p><strong>ML/AI:</strong> PyTorch, OpenCV, YOLOv8, Mistral, Ollama</p>
+    <p><strong>Tools:</strong> Git, MongoDB, MySQL, REST APIs</p>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p><a href="resume.pdf" target="_blank">Download Resume (PDF)</a></p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: saurabh@gmail.com</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/saurabh-tiwari-902ba327b" target="_blank">linkedin.com/in/saurabh-tiwari-902ba327b</a></p>
+    <p>GitHub: <a href="https://github.com/SaurabhCodes-16" target="_blank">github.com/SaurabhCodes-16</a></p>
+  </section>
+
+  <footer>
+    &copy; 2024 Saurabh Tiwari. All rights reserved.
+  </footer>
 </body>
 </html>
