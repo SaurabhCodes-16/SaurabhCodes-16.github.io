@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Saurabh Tiwari | Portfolio</title>
+  
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
   <style>
     * {
       margin: 0;
@@ -36,19 +40,12 @@
     header p {
       font-size: 1.2rem;
       color: #ddd;
-      letter-spacing: 0.5px;
     }
 
     section {
       max-width: 1000px;
       margin: auto;
       margin-bottom: 60px;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
     }
 
     h2 {
@@ -142,12 +139,12 @@
 </head>
 <body>
 
-  <header>
+  <header data-aos="fade-down">
     <h1>Saurabh Tiwari</h1>
     <p>CS Undergrad | Full Stack & AI Developer | Always Learning</p>
   </header>
 
-  <section id="about">
+  <section id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <div class="project">
       <p>
@@ -156,26 +153,26 @@
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" data-aos="fade-up">
     <h2>Projects</h2>
 
-    <div class="project">
+    <div class="project" data-aos="zoom-in-up">
       <h3>STSG Video QA System</h3>
       <p>Built a spatial-temporal scene graph pipeline using YOLOv8 + Ollama (LLM) to answer questions from videos. Includes triplet detection, tracking, and reasoning.</p>
       <a href="https://github.com/SaurabhCodes-16/your-STSG-repo" target="_blank">🔗 View on GitHub</a>
     </div>
 
-    <div class="project">
+    <div class="project" data-aos="zoom-in-up" data-aos-delay="100">
       <h3>Criminal Management System</h3>
       <p>Full-stack system with React, Node.js, and MySQL to manage criminal records, court cases, and forensic evidence. Role-based dashboards for police and admins.</p>
       <a href="https://github.com/SaurabhCodes-16/Criminal-Managemet-System" target="_blank">🔗 View on GitHub</a>
     </div>
   </section>
 
-  <section id="skills">
+  <section id="skills" data-aos="fade-up">
     <h2>Skills</h2>
 
-    <div class="skills-group">
+    <div class="skills-group" data-aos="fade-right">
       <h3>💻 Languages</h3>
       <div class="skills">
         <div class="skill-tag">JavaScript</div>
@@ -184,7 +181,7 @@
       </div>
     </div>
 
-    <div class="skills-group">
+    <div class="skills-group" data-aos="fade-left">
       <h3>🧠 AI / ML</h3>
       <div class="skills">
         <div class="skill-tag">YOLOv8</div>
@@ -194,7 +191,7 @@
       </div>
     </div>
 
-    <div class="skills-group">
+    <div class="skills-group" data-aos="fade-right">
       <h3>🛠️ Backend & APIs</h3>
       <div class="skills">
         <div class="skill-tag">Node.js</div>
@@ -204,7 +201,7 @@
       </div>
     </div>
 
-    <div class="skills-group">
+    <div class="skills-group" data-aos="fade-left">
       <h3>🧰 Tools & Platforms</h3>
       <div class="skills">
         <div class="skill-tag">Git & GitHub</div>
@@ -215,7 +212,7 @@
     </div>
   </section>
 
-  <section id="resume">
+  <section id="resume" data-aos="fade-up">
     <h2>Resume</h2>
     <div class="project">
       <p>You can download my latest resume below:</p>
@@ -223,7 +220,7 @@
     </div>
   </section>
 
-  <section id="contact">
+  <section id="contact" data-aos="fade-up">
     <h2>Contact</h2>
     <div class="links">
       <a href="mailto:saurabh@gmail.com">📧 Email</a>
@@ -232,9 +229,18 @@
     </div>
   </section>
 
-  <footer>
+  <footer data-aos="fade-in">
     © 2025 Saurabh Tiwari | Built with 💻 and ☕
   </footer>
+
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
 
 </body>
 </html>
